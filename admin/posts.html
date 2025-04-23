@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý bài viết - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Travel Blog VIP</h3>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="posts.html">
+                            <i class="bi bi-file-earmark-text"></i>
+                            Quản lý bài viết
+                        </a>
+                    </li>
+                    <li>
+                        <a href="comments.html">
+                            <i class="bi bi-chat-dots"></i>
+                            Quản lý bình luận
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.html">
+                            <i class="bi bi-people"></i>
+                            Quản lý người dùng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" target="_blank">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                            Xem trang web
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <h2>Quản lý bài viết</h2>
+                </div>
+                <div class="topbar-right">
+                    <div class="admin-user-menu">
+                        <img src="../images/default-avatar.jpg" alt="Admin" class="admin-avatar">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                                <span class="admin-username">Admin</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Cài đặt</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">
+                                    <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Management Content -->
+            <div class="admin-content">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>Danh sách bài viết</h5>
+                        <button class="btn btn-primary" id="addPostBtn">
+                            <i class="bi bi-plus-circle"></i> Thêm bài viết
+                        </button>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="table table-striped admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Danh mục</th>
+                                    <th>Ngày đăng</th>
+                                    <th>Lượt xem</th>
+                                    <th>Bình luận</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="postsTableBody">
+                                <!-- Post rows will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Post Modal -->
+    <div class="admin-modal" id="postModal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h5 class="admin-modal-title" id="postModalLabel">Thêm/Sửa bài viết</h5>
+                <button type="button" class="admin-modal-close" onclick="hideModal(document.getElementById('postModal'))">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <form id="postForm">
+                <div class="admin-modal-body">
+                    <input type="hidden" id="postId">
+                    <div class="admin-form-group">
+                        <label for="postTitle">Tiêu đề</label>
+                        <input type="text" class="form-control" id="postTitle" name="title" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postContent">Nội dung</label>
+                        <textarea class="form-control" id="postContent" name="content" rows="5" required></textarea>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postCategory">Danh mục</label>
+                        <select class="form-control" id="postCategory" name="category" required>
+                            <option value="nature">Phong cảnh</option>
+                            <option value="food">Ẩm thực</option>
+                            <option value="culture">Văn hóa</option>
+                            <option value="festival">Lễ hội</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postImage">URL Ảnh</label>
+                        <input type="text" class="form-control" id="postImage" name="image" required>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="hideModal(document.getElementById('postModal'))">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tạm thời lấy data từ main.js -->
+    <script src="../js/main.js"></script> 
+    <script src="js/admin.js"></script>
+</body>
+</html> 

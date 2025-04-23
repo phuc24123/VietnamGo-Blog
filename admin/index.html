@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Travel Blog VIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Travel Blog VIP</h3>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="posts.html">
+                            <i class="bi bi-file-earmark-text"></i>
+                            Quản lý bài viết
+                        </a>
+                    </li>
+                    <li>
+                        <a href="comments.html">
+                            <i class="bi bi-chat-dots"></i>
+                            Quản lý bình luận
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.html">
+                            <i class="bi bi-people"></i>
+                            Quản lý người dùng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" target="_blank">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                            Xem trang web
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="topbar-right">
+                    <div class="admin-user-menu">
+                        <img src="../images/obito.jpg" alt="Admin" class="admin-avatar">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                                <span class="admin-username">Admin</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Cài đặt</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">
+                                    <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Stats Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="admin-card stats-card">
+                            <div class="admin-card-body">
+                                <div class="stats-icon bg-primary">
+                                    <i class="bi bi-file-text"></i>
+                                </div>
+                                <div class="stats-details">
+                                    <h3 id="totalPosts">0</h3>
+                                    <p>Bài viết</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="admin-card stats-card">
+                            <div class="admin-card-body">
+                                <div class="stats-icon bg-success">
+                                    <i class="bi bi-chat-dots"></i>
+                                </div>
+                                <div class="stats-details">
+                                    <h3 id="totalComments">0</h3>
+                                    <p>Bình luận</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="admin-card stats-card">
+                            <div class="admin-card-body">
+                                <div class="stats-icon bg-warning">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="stats-details">
+                                    <h3 id="totalUsers">0</h3>
+                                    <p>Người dùng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="admin-card stats-card">
+                            <div class="admin-card-body">
+                                <div class="stats-icon bg-info">
+                                    <i class="bi bi-eye"></i>
+                                </div>
+                                <div class="stats-details">
+                                    <h3 id="totalViews">0</h3>
+                                    <p>Lượt xem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Posts and Comments -->
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <h5>Bài viết mới nhất</h5>
+                                <a href="posts.html" class="btn btn-sm btn-primary">
+                                    Xem tất cả
+                                </a>
+                            </div>
+                            <div class="admin-card-body">
+                                <div id="recentPosts" class="recent-list">
+                                    <!-- Recent posts will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <h5>Bình luận mới nhất</h5>
+                                <a href="comments.html" class="btn btn-sm btn-primary">
+                                    Xem tất cả
+                                </a>
+                            </div>
+                            <div class="admin-card-body">
+                                <div id="recentComments" class="recent-list">
+                                    <!-- Recent comments will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html> 

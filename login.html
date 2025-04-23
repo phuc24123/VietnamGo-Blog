@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - Travel Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2 class="auth-title">Đăng Nhập</h2>
+            <form id="loginForm" class="auth-form" onsubmit="return handleLogin(event)">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                </div>
+                <div class="auth-links">
+                    <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Định nghĩa users array
+        const users = [
+            { id: 1, username: 'admin', password: 'admin123', role: 'admin' },
+            { id: 2, username: 'john_doe', password: '123456', role: 'user' },
+            { id: 3, username: 'jane_smith', password: 'password', role: 'user' }
+        ];
+
+        // Hàm xử lý đăng nhập
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Tìm kiếm người dùng trong mảng users
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                // Lưu thông tin người dùng vào localStorage
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                // Hiển thị thông báo thành công
+                const submitBtn = document.querySelector('#loginForm button[type="submit"]');
+                submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Đăng nhập thành công';
+                submitBtn.classList.add('btn-success');
+                
+                // Chuyển hướng sau 1 giây
+                setTimeout(() => {
+                    if (user.role === 'admin') {
+                        window.location.href = 'admin/index.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }, 1000);
+            } else {
+                // Hiển thị thông báo lỗi
+                alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+            }
+            
+            return false;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Bài Viết - Travel Blog</title>
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+   <!-- Header -->
+   <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">VietnamGo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Thư Viện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Liên hệ</a>
+                    </li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="login.html" class="btn btn-outline-primary me-2">Đăng nhập</a>
+                    <a href="register.html" class="btn btn-primary">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Blog Hero Section -->
+    <section class="post-hero">
+        <div class="container">
+            <div class="post-hero__content">
+                <span class="post-hero__label">Chi tiết bài viết</span>
+                <h1 id="blog-title"></h1>
+                <div class="post-meta">
+                    <span class="post-author" id="blog-author"></span>
+                    <span class="post-date" id="blog-date"></span>
+                    <span class="post-views" id="blog-views"></span>
+                    <span class="post-comments" id="blog-comments"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Detail Section -->
+    <section class="post-detail py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <!-- Reading Progress Bar -->
+                    <div class="reading-progress">
+                        <div class="reading-progress-bar"></div>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <article class="post-content scroll-reveal">
+                        <div class="post-image">
+                            <img id="blog-image" src="" alt="" class="img-fluid">
+                        </div>
+                        <div class="post-body">
+                            <!-- Social Share -->
+                            <div class="social-share">
+                                <a href="#" class="share-button facebook">
+                                    <i class="bi bi-facebook"></i>
+                                    Chia sẻ
+                                </a>
+                                <a href="#" class="share-button twitter">
+                                    <i class="bi bi-twitter"></i>
+                                    Tweet
+                                </a>
+                            </div>
+
+                            <div id="blog-content" class="blog-content-text">
+                                <!-- Nội dung bài viết sẽ được thêm vào đây từ main.js -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Author Info -->
+                    <div class="author-box scroll-reveal">
+                        <div class="author-box__inner">
+                            <div class="author-avatar">
+                                <img id="author-avatar" src="" alt="">
+                            </div>
+                            <div class="author-info">
+                                <h3 class="author-name" id="author-name">Nguyễn Văn A</h3>
+                                <p class="author-bio">Nhà báo chuyên về văn hóa và du lịch, với hơn 10 năm kinh nghiệm viết về di sản văn hóa Việt Nam.</p>
+                                <div class="author-social">
+                                    <a href="#" class="social-link facebook">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-link twitter">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link instagram">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="post-comments-section scroll-reveal">
+                        <div class="comments-header">
+                            <h3 class="section-title">Bình luận (<span id="comments-count">0</span>)</h3>
+                            <p class="comments-subtitle">Hãy chia sẻ ý kiến của bạn về bài viết</p>
+                        </div>
+
+                        <div class="comments-list" id="comments-list">
+                            <!-- Comments will be loaded here -->
+                        </div>
+
+                        <div class="comment-form-wrapper">
+                            <h4>Viết bình luận</h4>
+                            <form id="comment-form" class="comment-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <label for="comment-name" class="form-label">Tên của bạn</label>
+                                            <input type="text" class="form-control" id="comment-name" placeholder="Nhập tên của bạn" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-3">
+                                            <label for="comment-email" class="form-label">Email của bạn</label>
+                                            <input type="email" class="form-control" id="comment-email" placeholder="Nhập email của bạn" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="comment-content" class="form-label">Nội dung bình luận</label>
+                                    <textarea class="form-control" id="comment-content" rows="5" placeholder="Chia sẻ suy nghĩ của bạn..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-send"></i>
+                                    Gửi bình luận
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="post-sidebar">
+                        <!-- Categories Widget -->
+                        <div class="post-sidebar__widget">
+                            <h3 class="post-sidebar__title">Danh mục</h3>
+                            <ul class="category-list">
+                                <li><a href="#"><span>Du lịch</span><span class="count">15</span></a></li>
+                                <li><a href="#"><span>Ẩm thực</span><span class="count">12</span></a></li>
+                                <li><a href="#"><span>Văn hóa</span><span class="count">8</span></a></li>
+                                <li><a href="#"><span>Lễ hội</span><span class="count">6</span></a></li>
+                                <li><a href="#"><span>Phong cảnh</span><span class="count">10</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Posts Widget -->
+                        <div class="post-sidebar__widget">
+                            <h3 class="post-sidebar__title">Bài viết phổ biến</h3>
+                            <div class="popular-posts" id="popular-posts">
+                                <!-- Popular posts will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="post-sidebar__widget">
+                            <h3 class="post-sidebar__title">Tags</h3>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag">Du lịch</a>
+                                <a href="#" class="tag">Ẩm thực</a>
+                                <a href="#" class="tag">Văn hóa</a>
+                                <a href="#" class="tag">Lễ hội</a>
+                                <a href="#" class="tag">Phong cảnh</a>
+                                <a href="#" class="tag">Biển</a>
+                                <a href="#" class="tag">Núi</a>
+                                <a href="#" class="tag">Đảo</a>
+                            </div>
+                        </div>
+
+                        <!-- Related Posts Widget -->
+                        <div class="post-sidebar__widget">
+                            <h3 class="post-sidebar__title">Bài viết liên quan</h3>
+                            <div class="post-related" id="related-posts">
+                                <!-- Related posts will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-wrapper text-center">
+                <span class="subtitle">Đăng ký nhận tin</span>
+                <h2>Nhận Thông Tin Du Lịch Mới Nhất</h2>
+                <p>Đăng ký để nhận những bài viết hay và ưu đãi du lịch hấp dẫn</p>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Nhập email của bạn">
+                        <button class="btn btn-primary">Đăng ký</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4>Về VietnamGo</h4>
+                    <p>Chúng tôi là nền tảng chia sẻ thông tin du lịch hàng đầu Việt Nam, mang đến cho bạn những trải nghiệm tuyệt vời.</p>
+                    <div class="social-links">
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h4>Khám Phá</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Điểm đến</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h4>Liên Kết</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Điều khoản</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-contact">
+                        <li><i class="bi bi-geo-alt"></i><span>28 Lý Thường Kiệt, TP Huế</span></li>
+                        <li><i class="bi bi-envelope"></i><span>nthp1024@gmail.com</span></li>
+                        <li><i class="bi bi-phone"></i><span>0911034984</span></li>
+                        <li><i class="bi bi-clock"></i><span>Thứ 2 - Chủ nhật: 9:00 - 18:00</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 VietnamGo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

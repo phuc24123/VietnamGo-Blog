@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Travel Blog VIP</h3>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="bi bi-speedometer2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="posts.html">
+                            <i class="bi bi-file-earmark-text"></i>
+                            Quản lý bài viết
+                        </a>
+                    </li>
+                    <li>
+                        <a href="comments.html">
+                            <i class="bi bi-chat-dots"></i>
+                            Quản lý bình luận
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="users.html">
+                            <i class="bi bi-people"></i>
+                            Quản lý người dùng
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" target="_blank">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                            Xem trang web
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="topbar-left">
+                    <h2>Quản lý người dùng</h2>
+                </div>
+                <div class="topbar-right">
+                    <div class="admin-user-menu">
+                        <img src="../images/default-avatar.jpg" alt="Admin" class="admin-avatar">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                                <span class="admin-username">Admin</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Hồ sơ</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Cài đặt</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">
+                                    <i class="bi bi-box-arrow-right"></i> Đăng xuất
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Content -->
+            <div class="admin-content">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h5>Danh sách người dùng</h5>
+                        <button class="btn btn-primary" id="addUserBtn">
+                            <i class="bi bi-plus-circle"></i> Thêm người dùng
+                        </button>
+                    </div>
+                    <div class="admin-card-body">
+                        <table class="table table-striped admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ảnh đại diện</th>
+                                    <th>Tên người dùng</th>
+                                    <th>Vai trò</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- User rows will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- User Modal -->
+    <div class="admin-modal" id="userModal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h5 class="admin-modal-title" id="userModalLabel">Thêm/Sửa người dùng</h5>
+                <button type="button" class="admin-modal-close" onclick="hideModal(document.getElementById('userModal'))">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <form id="userForm">
+                <div class="admin-modal-body">
+                    <input type="hidden" id="userId">
+                    <div class="admin-form-group">
+                        <label for="username">Tên người dùng</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <small class="form-text text-muted">Để trống nếu không muốn thay đổi mật khẩu.</small>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="role">Vai trò</label>
+                        <select class="form-control" id="role" name="role" required>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="avatar">URL Ảnh đại diện</label>
+                        <input type="text" class="form-control" id="avatar" name="avatar">
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="hideModal(document.getElementById('userModal'))">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tạm thời lấy data từ main.js -->
+    <script src="../js/main.js"></script> 
+    <script src="js/admin.js"></script>
+</body>
+</html> 

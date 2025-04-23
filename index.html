@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VietnamGo - Khám phá vẻ đẹp Việt Nam qua những điểm đến tuyệt vời, trải nghiệm văn hóa độc đáo và ẩm thực phong phú">
+    <meta name="keywords" content="du lịch Việt Nam, điểm đến Việt Nam, văn hóa Việt Nam, ẩm thực Việt Nam">
+    <meta name="author" content="VietnamGo">
+    <meta property="og:title" content="VietnamGo - Khám Phá Việt Nam">
+    <meta property="og:description" content="Khám phá vẻ đẹp Việt Nam qua những điểm đến tuyệt vời">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://vietnamgo.com">
+    <title>VietnamGo - Khám Phá Việt Nam</title>
+    
+    <!-- Preload Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    VietnamGo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                Về chúng tôi
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Thư Viện</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="nav-buttons">
+                        <a href="login.html" class="btn btn-outline-primary me-2">
+                            Đăng nhập
+                        </a>
+                        <a href="register.html" class="btn btn-primary">
+                            Đăng ký
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/halong.jpg');">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">Khám phá Việt Nam</span>
+                        <h1>Vịnh Hạ Long</h1>
+                        <p>Kỳ quan thiên nhiên thế giới với hàng nghìn hòn đảo đá vôi hùng vĩ</p>
+                        <div class="hero-buttons">
+                            <a href="gallery.html" class="btn btn-primary">Khám phá ngay</a>
+                            <a href="blog.html" class="btn btn-outline-light">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hoian.jpg');">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">Khám phá Việt Nam</span>
+                        <h1>Phố Cổ Hội An</h1>
+                        <p>Thành phố cổ kính với kiến trúc độc đáo và văn hóa truyền thống</p>
+                        <div class="hero-buttons">
+                            <a href="gallery.html" class="btn btn-primary">Khám phá ngay</a>
+                            <a href="blog.html" class="btn btn-outline-light">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/sapa.jpg');">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">Khám phá Việt Nam</span>
+                        <h1>Sapa Hùng Vĩ</h1>
+                        <p>Vùng đất của những thửa ruộng bậc thang và văn hóa dân tộc độc đáo</p>
+                        <div class="hero-buttons">
+                            <a href="gallery.html" class="btn btn-primary">Khám phá ngay</a>
+                            <a href="blog.html" class="btn btn-outline-light">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Service Features -->
+    <section class="service-features">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="images/planning.png" alt="Planning Icon">
+                        </div>
+                        <h3>Kế Hoạch Du Lịch</h3>
+                        <p>VietnamGo: Cổng thông tin du lịch toàn diện giúp bạn lên kế hoạch chuyến đi dễ dàng. Khám phá Việt Nam với sự hỗ trợ của chúng tôi, từ chỗ ở đến các hoạt động, đảm bảo một trải nghiệm trọn vẹn và không phiền phức.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="images/map.png" alt="Experience Icon">
+                        </div>
+                        <h3>Trải nghiệm phù hợp</h3>
+                        <p>Tạo nên những trải nghiệm độc đáo dành riêng cho bạn. Khám phá Việt Nam theo cách chưa từng có với các hành trình được cá nhân hóa và sự hướng dẫn chuyên nghiệp, đảm bảo mỗi khoảnh khắc trong chuyến đi đều hoàn hảo.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="images/trust.png" alt="Trust Icon">
+                        </div>
+                        <h3>Đáng Tin Cậy</h3>
+                        <p>VietnamGo: Người bạn đồng hành đáng tin cậy trong mọi chuyến đi. Với cam kết về chất lượng dịch vụ và sự chuyên nghiệp, hãy an tâm khám phá Việt Nam cùng chúng tôi, nơi mọi chi tiết đều được chăm chút tỉ mỉ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings -->
+    <section class="offerings">
+        <div class="container">
+            <div class="offering-grid">
+                <div class="offering-item" data-aos="fade-right">
+                    <div class="offering-number">01</div>
+                    <div class="offering-content">
+                        <h3>Khám Phá Văn Hóa</h3>
+                        <p>Trải nghiệm nét văn hóa độc đáo của Việt Nam thông qua các tour du lịch văn hóa, lễ hội truyền thống và giao lưu với người dân địa phương. Khám phá những di sản văn hóa phi vật thể và vật thể được UNESCO công nhận.</p>
+                    </div>
+                </div>
+                <div class="offering-item" data-aos="fade-left">
+                    <div class="offering-image">
+                        <img src="images/culture.jpg" alt="Văn hóa Việt Nam">
+                    </div>
+                </div>
+                <div class="offering-item" data-aos="fade-right">
+                    <div class="offering-image">
+                        <img src="images/nature.jpg" alt="Thiên nhiên Việt Nam">
+                    </div>
+                </div>
+                <div class="offering-item" data-aos="fade-left">
+                    <div class="offering-number">02</div>
+                    <div class="offering-content">
+                        <h3>Khám Phá Thiên Nhiên</h3>
+                        <p>Chiêm ngưỡng vẻ đẹp tuyệt vời của thiên nhiên Việt Nam từ những vịnh biển trong xanh đến những dãy núi hùng vĩ. Tham gia các hoạt động ngoài trời và khám phá hệ sinh thái đa dạng của đất nước.</p>
+                    </div>
+                </div>
+                <div class="offering-item" data-aos="fade-right">
+                    <div class="offering-number">03</div>
+                    <div class="offering-content">
+                        <h3>Ẩm Thực Đặc Sắc</h3>
+                        <p>Khám phá nền ẩm thực phong phú của Việt Nam với những món ăn đặc trưng từng vùng miền. Trải nghiệm nghệ thuật nấu nướng truyền thống và thưởng thức hương vị độc đáo của ẩm thực đường phố.</p>
+                    </div>
+                </div>
+                <div class="offering-item" data-aos="fade-left">
+                    <div class="offering-image">
+                        <img src="images/food.jpg" alt="Ẩm thực Việt Nam">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="latest-posts">
+        <div class="container">
+            <div class="blog-title" data-aos="fade-up">
+                <span class="subtitle">Blog du lịch</span>
+                <h2>Bài Viết Mới Nhất</h2>
+                <p>Cập nhật những trải nghiệm và câu chuyện du lịch thú vị</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <article class="post-card">
+                        <div class="post-card__image">
+                            <img src="images/dalat.jpg" alt="Đà Lạt - Thành Phố Ngàn Hoa">
+                            <span class="post-card__category">Phong cảnh</span>
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span><i class="bi bi-calendar"></i>01 Th4</span>
+                                <span><i class="bi bi-eye"></i>1.5k lượt xem</span>
+                                <span><i class="bi bi-chat"></i>25 bình luận</span>
+                            </div>
+                            <h3 class="post-card__title">
+                                <a href="blog-detail.html?id=1">Khám Phá Đà Lạt - Thành Phố Ngàn Hoa</a>
+                            </h3>
+                            <p class="post-card__excerpt">Đà Lạt nổi tiếng với khí hậu mát mẻ, những rừng thông bạt ngàn và những khu vườn hoa tuyệt đẹp.</p>
+                            <div class="post-card__footer">
+                                <div class="post-card__author">
+                                    <div class="post-card__author-info">
+                                        <div class="post-card__author-name">Nguyễn Văn A</div>
+                                    </div>
+                                </div>
+                                <a href="blog-detail.html?id=1" class="read-more">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article class="post-card">
+                        <div class="post-card__image">
+                            <img src="images/hoianfood.jpg" alt="Ẩm Thực Đường Phố Hội An">
+                            <span class="post-card__category">Ẩm thực</span>
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span><i class="bi bi-calendar"></i>28 Th3</span>
+                                <span><i class="bi bi-eye"></i>2k lượt xem</span>
+                                <span><i class="bi bi-chat"></i>30 bình luận</span>
+                            </div>
+                            <h3 class="post-card__title">
+                                <a href="blog-detail.html?id=2">Ẩm Thực Đường Phố Hội An</a>
+                            </h3>
+                            <p class="post-card__excerpt">Khám phá nền ẩm thực đa dạng và phong phú của phố cổ Hội An, từ mì Quảng đến cao lầu.</p>
+                            <div class="post-card__footer">
+                                <div class="post-card__author">
+                                    <div class="post-card__author-info">
+                                        <div class="post-card__author-name">Trần Thị B</div>
+                                    </div>
+                                </div>
+                                <a href="blog-detail.html?id=2" class="read-more">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article class="post-card">
+                        <div class="post-card__image">
+                            <img src="images/hue.jpg" alt="Lễ Hội Áo Dài Huế 2024">
+                            <span class="post-card__category">Văn hóa</span>
+                        </div>
+                        <div class="post-card__content">
+                            <div class="post-card__meta">
+                                <span><i class="bi bi-calendar"></i>25 Th3</span>
+                                <span><i class="bi bi-eye"></i>1.8k lượt xem</span>
+                                <span><i class="bi bi-chat"></i>20 bình luận</span>
+                            </div>
+                            <h3 class="post-card__title">
+                                <a href="blog-detail.html?id=3">Lễ Hội Áo Dài Huế 2024</a>
+                            </h3>
+                            <p class="post-card__excerpt">Trải nghiệm vẻ đẹp của áo dài truyền thống Việt Nam tại Festival Huế 2024.</p>
+                            <div class="post-card__footer">
+                                <div class="post-card__author">
+                                    <div class="post-card__author-info">
+                                        <div class="post-card__author-name">Lê Văn C</div>
+                                    </div>
+                                </div>
+                                <a href="blog-detail.html?id=3" class="read-more">Đọc thêm <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="image-gallery">
+        <div class="container">
+            <div class="gallery-header">
+                <div class="header-left" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="gallery-title">Khám Phá Vẻ Đẹp Việt Nam</h2>
+                </div>
+                <div class="header-right" data-aos="fade-left" data-aos-duration="1000">
+                    <p>Từ những thành phố sôi động đến những vùng núi non hùng vĩ, từ những bãi biển hoang sơ đến những di sản văn hóa độc đáo - hãy để chúng tôi dẫn lối bạn khám phá Việt Nam theo cách riêng của mình.</p>
+                    <a href="gallery.html" class="btn-explore">
+                        Khám phá thêm
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-row top-row">
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-duration="800">
+                        <img src="images/gallery-1.jpg" alt="Thừa Thiên Huế">
+                        <div class="gallery-overlay">
+                            <h3>Thừa Thiên Huế</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="200">
+                        <img src="images/gallery-2.jpg" alt="Hà Nội">
+                        <div class="gallery-overlay">
+                            <h3>Hà Nội</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="400">
+                        <img src="images/gallery-3.jpg" alt="Hội An">
+                        <div class="gallery-overlay">
+                            <h3>Hội An</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-row bottom-row">
+                    <div class="gallery-item wide" data-aos="fade-up" data-aos-duration="1000">
+                        <img src="images/gallery-4.jpg" alt="Sapa">
+                        <div class="gallery-overlay">
+                            <h3>Sapa</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <img src="images/gallery-5.jpg" alt="Quảng Ninh">
+                        <div class="gallery-overlay">
+                            <h3>Quảng Ninh</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4>Về VietnamGo</h4>
+                    <p>Chúng tôi là nền tảng chia sẻ thông tin du lịch hàng đầu Việt Nam, mang đến cho bạn những trải nghiệm tuyệt vời.</p>
+                    <div class="social-links">
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h4>Khám Phá</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Điểm đến</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h4>Liên Kết</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Điều khoản</a></li>
+                        <li><a href="#">Chính sách</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-geo-alt"></i>
+                            <span>28 Lý Thường Kiệt, TP Huế</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            <span>nthp1024@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-phone"></i>
+                            <span>0911034984</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock"></i>
+                            <span>Thứ 2 - Chủ nhật: 9:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 VietnamGo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Kiểm tra trạng thái đăng nhập và cập nhật giao diện
+        function updateLoginUI() {
+            const navButtons = document.getElementById('navButtons');
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+            if (currentUser) {
+                // Người dùng đã đăng nhập
+                navButtons.innerHTML = `
+                    <div class="user-info">
+                        <span class="username">Xin chào, ${currentUser.username}</span>
+                        <button onclick="handleLogout()" class="btn btn-outline-danger">Đăng xuất</button>
+                    </div>
+                `;
+            } else {
+                // Chưa đăng nhập
+                navButtons.innerHTML = `
+                    <a href="login.html" class="btn btn-outline-primary me-2">Đăng nhập</a>
+                    <a href="register.html" class="btn btn-primary">Đăng ký</a>
+                `;
+            }
+        }
+
+        // Hàm xử lý đăng xuất
+        function handleLogout() {
+            localStorage.removeItem('currentUser');
+            window.location.reload(); // Tải lại trang sau khi đăng xuất
+        }
+
+        // Gọi hàm updateLoginUI khi trang được tải
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLoginUI();
+            
+            // Initialize Swiper
+            const swiper = new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+
+            // Back to Top Button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
