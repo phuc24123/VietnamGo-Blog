@@ -32,7 +32,7 @@ VietnamGo là một website du lịch chuyên về khám phá và trải nghiệ
 
 ## Tài khoản mẫu để đăng nhập
 ### Admin
-- **Tài khoản**: admin123
+- **Tài khoản**: admin
 - **Mật khẩu**: admin123
 
 ### Người dùng thường
